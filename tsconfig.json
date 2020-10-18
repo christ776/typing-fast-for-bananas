@@ -21,11 +21,15 @@
     "paths": {
       "components/*": [
         "src/components/*"
+      ],
+      "assets/*": [
+        "src/assets/*"
       ]
     }
   },
   "include": [
     "./src",
-    "./webpack.config.ts"
+    "./webpack.config.ts",
+    "**/src/**/*.ts"
   ]
 }

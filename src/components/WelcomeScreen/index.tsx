@@ -1,26 +1,40 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useRef, useState } from 'react'
 import Timer from '../Timer'
 import Score from 'components/Score'
 import Words from 'components/Words'
+import keyboardImg from 'assets/Hackathon_Keyboard.png'
+import headerImg from 'assets/Hackathon_Header.png'
 
-import { generateWords } from 'src/utils/word.generation'
 import '../../styles/index.css'
 
 const WelcomeScreen: React.FC = () => {
     const [currentInputValue, setCurrentInputValue] = useState('')
-    const [wordsToType, setWordsToType] = useState(generateWords)
+    const ref = useRef<HTMLInputElement>()
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value)
         setCurrentInputValue(event.target.value)
     }
 
+    const resetInputField = () => {
+        ref.current.value = ''
+    }
+
     return (
-        <div className='container'>
-            <Timer />
-            <Score />
-            <Words wordToType={wordsToType[0]} currentInputValue={currentInputValue} />
-            <input type='text' className='input-box' onChange={onChangeHandler} />
-        </div>
+        <>
+            <img className="header" src={headerImg} />
+            <div className="border">
+                <div className="container">
+                    <Timer />
+                    <Score />
+                </div>
+                <Words resetInputField={resetInputField} currentInputValue={currentInputValue} />
+                <div className="keyboard-container">
+                    <div className="pepe">
+                        <img className="keyboard" src={keyboardImg} />
+                        <input ref={ref} className="input-box" onChange={onChangeHandler} />
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 
