@@ -160,3 +160,18 @@ body {
     width: 100%;
     max-height: 800px;
 }
+
+.play-again-button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    position: relative;
+    bottom: -40rem;
+    left: 18rem;
+    width: 17rem;
+    height: 4rem;
+    border-radius: 30px;
+}

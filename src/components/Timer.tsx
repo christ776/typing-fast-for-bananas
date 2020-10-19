@@ -4,7 +4,7 @@ import { timeOver } from 'src/app/wordsSlice'
 import '../styles/index.css'
 
 const Timer: React.FC = () => {
-    const [time, setTime] = useState(6)
+    const [time, setTime] = useState(60)
     const dispatch = useDispatch()
     const counter = new Date(time * 1000).toISOString().substr(14, 5)
 

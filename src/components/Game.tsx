@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { RootState } from 'src/app/reducers'
 import Timer from './Timer'
@@ -8,9 +8,8 @@ import Words from 'components/Words'
 import WelcomeScreen from './Welcome'
 
 import keyboardImg from 'assets/Hackathon_Keyboard.png'
-import gameOverImgSrc from 'assets/Hackathon_KeyboardingOdyssey-12.png'
 import '../styles/index.css'
-// import headerImg from 'assets/Hackathon_Header.png'
+import { restartGame } from 'src/app/wordsSlice'
 
 const Game: React.FC = () => {
     const [currentInputValue, setCurrentInputValue] = useState('')
@@ -18,9 +17,14 @@ const Game: React.FC = () => {
         showWelcomeScreen: state.gameState.showWelcomeScreen,
         showGameOverScreen: state.gameState.showGameOverScreen
     }))
+    const dispatch = useDispatch()
     const ref = useRef<HTMLInputElement>()
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         setCurrentInputValue(event.target.value)
+    }
+
+    const playAgainHandler = () => {
+        dispatch(restartGame())
     }
 
     const resetInputField = () => {
@@ -43,7 +47,11 @@ const Game: React.FC = () => {
         </div>
     )
 
-    const gameOverScreen = <div className="game-over"></div>
+    const gameOverScreen = (
+        <div className="game-over">
+            <button className="play-again-button" onClick={playAgainHandler}></button>
+        </div>
+    )
 
     return showWelcomeScreen ? (
         <div className="border">

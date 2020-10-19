@@ -28,10 +28,14 @@ export const slice = createSlice({
         startGame: (state) => {
             state.showWelcomeScreen = false
             state.gameIsRunning = true
+        },
+        restartGame: (state) => {
+            state.showGameOverScreen = false
+            state.gameIsRunning = true
         }
     }
 })
 
-export const { typeWordSuccessfully, startGame, timeOver } = slice.actions
+export const { typeWordSuccessfully, startGame, timeOver, restartGame } = slice.actions
 
 export default slice.reducer
