@@ -1,5 +1,5 @@
 import React from 'react'
-import WelcomeScreen from 'components/WelcomeScreen'
+import Game from 'components/Game'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 
@@ -11,7 +11,7 @@ const store = configureStore({
 
 const App: React.FC = () => (
     <Provider store={store}>
-        <WelcomeScreen />
+        <Game />
     </Provider>
 )
 

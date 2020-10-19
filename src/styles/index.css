@@ -5,11 +5,12 @@ body {
     margin: 0;
     background-image: url("../assets/Hackathon_Pattern-01.png");
     background-repeat: round;
+    /* transform: scale(0.72); */
 }
 
 .pepe {
     position: relative;
-    bottom: -1.45rem;
+    bottom: -3.45rem;
     left: -.8rem;
 }
 
@@ -18,7 +19,7 @@ body {
 }
 
 .border {
-    background-image: url("../assets/Hackathon_Border-02.png");
+    background-image: url("../assets/Hackathon_Border-03.png");
     background-repeat: round;
     display: flex;
     flex-direction: column;
@@ -32,11 +33,11 @@ body {
     position: relative;
     left: 21%;
     width: 60%;
-    top: -20.2rem;
+    top: -13.4rem;
     border: none;
     background: #e3dbce;
     border-radius: 5px;
-    height: 3.5rem;
+    height: 2.4rem;
     color: #5c3f11;
 }
 
@@ -59,10 +60,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: auto;
-    position: absolute;
     top: 8.0rem;
-    background-color: darkkhaki;
-    right: 11rem;
+    right: 6rem;
     padding: 2rem;
     position: relative;
     padding-right: 6rem;
@@ -118,4 +117,27 @@ body {
 
 .correct {
     color: whitesmoke;
+}
+
+.title-screen {
+    width: 100%;
+    transform: scale(0.86);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.title-screen-background {
+    z-index: -1;
+    width: 100%;
+    transform: scale(0.86);
+}
+
+
+.start-button {
+    position: fixed;
+    bottom: -4rem;
+    transform: scale(0.25);
 }

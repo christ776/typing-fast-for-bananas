@@ -3,7 +3,7 @@ import '../styles/index.css'
 
 const Timer: React.FC = () => {
     const [time, setTime] = useState(60)
-    const counter = new Date(time * 1000).toISOString().substr(11, 8)
+    const counter = new Date(time * 1000).toISOString().substr(14, 5)
 
     useEffect(() => {
         const timer = setInterval(() => {

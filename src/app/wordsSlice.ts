@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { generateWords } from 'src/utils/word.generation'
 
 export const slice = createSlice({
@@ -7,7 +7,8 @@ export const slice = createSlice({
         wordsToType: generateWords(),
         points: 0,
         wordsTypedOK: 0,
-        gameIsRunning: true
+        gameIsRunning: false,
+        showWelcomeScreen: true
     },
 
     reducers: {
@@ -17,10 +18,14 @@ export const slice = createSlice({
         },
         timeOver: (state) => {
             state.gameIsRunning = false
+        },
+        startGame: (state) => {
+            state.showWelcomeScreen = false
+            state.gameIsRunning = true
         }
     }
 })
 
-export const { typeWordSuccessfully } = slice.actions
+export const { typeWordSuccessfully, startGame } = slice.actions
 
 export default slice.reducer
