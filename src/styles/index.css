@@ -9,6 +9,11 @@ body {
     /* transform: scale(0.72); */
 }
 
+#root {
+    width: 100%;
+    display: flex;
+}
+
 .pepe {
     position: relative;
     bottom: -3.45rem;
@@ -25,7 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -3rem;
+    /* margin-top: -3rem; */
 }
 
 .input-box {
@@ -80,25 +85,28 @@ body {
 .leaf {
     width: 60%;
     height: 10rem;
+    left: 9%;
+    bottom: -21%;
+    position: relative;
 }
 
 .leaf-container {
     z-index: -1;
     height: 20rem;
     display: flex;
+    flex-direction: column;
     margin-top: auto;
-    padding-top: 7rem;
-    align-items: center;
+    align-items: center;    
     position: relative;
-    left: 30%;
+    justify-content: center;
 }
 
 .words-challenge {
     font-family: 'Quicksand';
     font-size: 4rem;
     position: relative;
-    right: 45%;
     color: #5c3f11;
+    bottom: 18%;
 }
 
 .small-container {
@@ -121,24 +129,34 @@ body {
 }
 
 .title-screen {
-    width: 100%;
-    transform: scale(0.86);
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    top: 5rem;
+    max-width: 90%;
 }
 
 .title-screen-background {
     z-index: -1;
     width: 100%;
-    transform: scale(0.86);
+    top: 2rem;
+    transform: scale(0.85, 0.99);
+    position: relative;
 }
 
 
 .start-button {
     position: fixed;
-    bottom: -4rem;
+    bottom: 1rem;
     transform: scale(0.25);
+}
+
+.game-over {
+    display: inline;
+    background-image: url('../assets/Hackathon_KeyboardingOdyssey-12.png');
+    background-repeat: round;
+    width: 100%;
+    max-height: 800px;
 }

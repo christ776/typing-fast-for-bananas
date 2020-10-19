@@ -8,16 +8,22 @@ export const slice = createSlice({
         points: 0,
         wordsTypedOK: 0,
         gameIsRunning: false,
-        showWelcomeScreen: true
+        showWelcomeScreen: true,
+        showGameOverScreen: false
     },
 
     reducers: {
         typeWordSuccessfully: (state) => {
             state.wordsToType.shift()
             state.points += 100
+            if (state.wordsToType.length === 0) {
+                state.showGameOverScreen = true
+                state.gameIsRunning = false
+            }
         },
         timeOver: (state) => {
             state.gameIsRunning = false
+            state.showGameOverScreen = true
         },
         startGame: (state) => {
             state.showWelcomeScreen = false
@@ -26,6 +32,6 @@ export const slice = createSlice({
     }
 })
 
-export const { typeWordSuccessfully, startGame } = slice.actions
+export const { typeWordSuccessfully, startGame, timeOver } = slice.actions
 
 export default slice.reducer
