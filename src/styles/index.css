@@ -8,7 +8,6 @@ body {
 }
 
 .pepe {
-    z-index: -1;
     position: relative;
     bottom: -1.45rem;
     left: -.8rem;
@@ -28,18 +27,24 @@ body {
 }
 
 .input-box {
-    font-size: 1.8rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
+    font-size: 2.8rem;
+    font-family: 'Quicksand';
+    position: relative;
     left: 21%;
     width: 60%;
-    top: 0.75rem;
+    top: -20.2rem;
     border: none;
+    background: #e3dbce;
+    border-radius: 5px;
+    height: 3.5rem;
+    color: #5c3f11;
 }
 
 .keyboard {
     background-repeat: no-repeat;
     width: 100%;
+    position: relative;
+    z-index: -1;
 }
 
 .keyboard-container {
@@ -59,6 +64,9 @@ body {
     background-color: darkkhaki;
     right: 11rem;
     padding: 2rem;
+    position: relative;
+    padding-right: 6rem;
+    margin-right: 2rem;
     z-index: -1;
     border-bottom-left-radius: 100px;
     background-color: #abc68f;
@@ -72,7 +80,6 @@ body {
 .leaf {
     width: 60%;
     height: 10rem;
-    padding-left: 22rem;
 }
 
 .leaf-container {
@@ -82,23 +89,27 @@ body {
     margin-top: auto;
     padding-top: 7rem;
     align-items: center;
+    position: relative;
+    left: 30%;
 }
 
 .words-challenge {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 3rem;
-    position: absolute;
-    left:45%;
+    font-family: 'Quicksand';
+    font-size: 4rem;
+    position: relative;
+    right: 45%;
     color: #5c3f11;
 }
 
 .small-container {
     border-color: black;
+    font-family: 'Quicksand';
 }
 
 .score-board {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Quicksand';
     font-size: 1.2rem;
+    margin-left: auto
 }
 
 .incorrect {
